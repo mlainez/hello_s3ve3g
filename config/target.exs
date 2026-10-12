@@ -74,10 +74,18 @@ config :mdns_lite,
 # Grow the application partition (nested partition 3 of userdata) to the
 # end of userdata on first boot: rewrite the nested MBR with the grow-app
 # task, reload the kpartx mapping, then resize.f2fs.
+#
+# nerves_data_resize takes the basename of these paths as the kernel name:
+# it reads /sys/class/block/<disk>/size and runs `dmsetup table <partition>`.
+# /dev/rootdisk0 and /dev/nerves-app (also /root's source in /proc/mounts)
+# are symlinks with no sysfs or device-mapper entry under that name, so both
+# are given by kernel name: userdata is mmcblk0p26 in the GT-I9301I's fixed
+# GPT, and kpartx names its third partition mmcblk0p26p3.
 config :nerves_data_resize, :config,
   mount_point: "/root",
+  partition: "/dev/mapper/mmcblk0p26p3",
   grow_partition: [
-    disk: "/dev/rootdisk0",
+    disk: "/dev/mmcblk0p26",
     ops_fw: "/usr/share/fwup/ops.fw",
     task: "grow-app"
   ]
