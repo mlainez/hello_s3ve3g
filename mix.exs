@@ -51,7 +51,7 @@ defmodule HelloS3ve3g.MixProject do
 
       # The system, from the sibling checkout.
       {:nerves_system_s3ve3g,
-       github: "mlainez/nerves_system_s3ve3g", tag: "v0.1.0", runtime: false, targets: :s3ve3g}
+       github: "mlainez/nerves_system_s3ve3g", tag: "v0.1.1", runtime: false, targets: :s3ve3g}
     ]
   end
 
