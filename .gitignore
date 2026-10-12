@@ -21,3 +21,7 @@ erl_crash.dump
 
 # Editor / tooling state
 /.claude/
+
+# Firmware images and release assets (scripts/make-release-assets.sh)
+*.img
+/dist/
