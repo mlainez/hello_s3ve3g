@@ -71,7 +71,8 @@ cp "$FW" "$OUT/$APP.fw"
 cp "$LK2ND_IMG" "$OUT/lk2nd-s3ve3g.img"
 {
   echo "lk2nd-s3ve3g.img: lk2nd $LK2ND_REV ($LK2ND_SHA), based on"
-  echo "https://github.com/msm8916-mainline/lk2nd, built with"
+  echo "https://github.com/msm8916-mainline/lk2nd. Source of this build:"
+  echo "https://github.com/Spin42/lk2nd/tree/galaxy-s3-neo (commit $LK2ND_SHA). Built with"
   echo "\`make TOOLCHAIN_PREFIX=arm-none-eabi- lk2nd-msm8226\`."
   echo
   echo "===== LICENSE ====="
