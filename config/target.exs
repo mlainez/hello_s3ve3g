@@ -1,7 +1,7 @@
 import Config
 
-# Use RingLogger as the logger backend and remove :console.
-config :logger, backends: [RingLogger]
+# No console logger: config/runtime.exs adds RingLogger at boot.
+config :logger, :default_handler, false
 
 # Start nerves_runtime and nerves_pack (networking, ssh, mDNS) before the
 # application, so a crash in the application still leaves ssh up.

@@ -37,6 +37,7 @@ defmodule HelloS3ve3g.MixProject do
       {:nerves, "~> 1.13", runtime: false},
       {:shoehorn, "~> 0.9.1"},
       {:ring_logger, "~> 0.11.0"},
+      {:logger_backends, "~> 1.0"},
       {:toolshed, "~> 0.5.0"},
 
       # Allow Nerves.Runtime on host to support development, testing and CI.
