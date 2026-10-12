@@ -12,8 +12,16 @@ export MIX_TARGET=s3ve3g
 mix deps.get
 mix firmware
 mix firmware.image hello_s3ve3g.img     # first install: heimdall flash --USERDATA
-mix upload nerves.local                 # later updates, over ssh
+./upload.sh nerves.local                # later updates, over ssh
 ```
+
+`upload.sh` streams the `.fw` to the `fwup` ssh subsystem with only `PATH`,
+`HOME` and `SSH_AUTH_SOCK` in ssh's environment. Erlang/OTP 29.0.6 rejects a
+subsystem request that follows the `env` requests OpenSSH sends for
+`SendEnv LANG LC_*` (OTP-20371); `mix upload` avoids them too but also drops
+the ssh agent. The system carries the OTP fix, so firmware built from it
+accepts `mix upload` and `sftp` from a normal shell; `upload.sh` works with
+both.
 
 On the phone:
 
