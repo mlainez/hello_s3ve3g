@@ -2,7 +2,7 @@ defmodule HelloS3ve3g.MixProject do
   use Mix.Project
 
   @app :hello_s3ve3g
-  @version "0.1.3"
+  @version "0.1.4"
   @all_targets [:s3ve3g]
 
   def project do
