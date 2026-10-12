@@ -2,7 +2,7 @@ defmodule HelloS3ve3g.MixProject do
   use Mix.Project
 
   @app :hello_s3ve3g
-  @version "0.1.5"
+  @version "0.1.6"
   @all_targets [:s3ve3g]
 
   def project do
@@ -52,7 +52,7 @@ defmodule HelloS3ve3g.MixProject do
 
       # The system, from the sibling checkout.
       {:nerves_system_s3ve3g,
-       github: "mlainez/nerves_system_s3ve3g", tag: "v0.1.1", runtime: false, targets: :s3ve3g}
+       github: "mlainez/nerves_system_s3ve3g", tag: "v0.1.2", runtime: false, targets: :s3ve3g}
     ]
   end
 
